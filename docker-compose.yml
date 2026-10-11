@@ -1,0 +1,46 @@
+services:
+  inventory:
+    build: ./services/inventory
+    environment:
+      - PORT=4000
+      - TELEMETRY_URL=http://telemetry-collector:5000/report
+  payments:
+    build:
+      context: ./services
+      dockerfile: payments/Dockerfile
+    environment:
+      - PORT=4000
+      - INVENTORY_URL=http://inventory:4000
+      - TELEMETRY_URL=http://telemetry-collector:5000/report
+  orders:
+    build:
+      context: ./services
+      dockerfile: orders/Dockerfile
+    environment:
+      - PORT=4000
+      - PAYMENTS_URL=http://payments:4000
+      - TELEMETRY_URL=http://telemetry-collector:5000/report
+  auth:
+    build:
+      context: ./services
+      dockerfile: auth/Dockerfile
+    environment:
+      - PORT=4000
+      - ORDERS_URL=http://orders:4000
+      - TELEMETRY_URL=http://telemetry-collector:5000/report
+  gateway:
+    build:
+      context: ./services
+      dockerfile: gateway/Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - AUTH_URL=http://auth:4000
+      - TELEMETRY_URL=http://telemetry-collector:5000/report
+  telemetry-collector:
+    build: ./services/telemetry-collector
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
