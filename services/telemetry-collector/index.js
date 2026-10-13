@@ -18,6 +18,10 @@ app.post('/report', (req, res) => {
 app.get('/telemetry', (req, res) => {
   res.json(telemetryLog);
 });
+app.post('/clear', (req, res) => {
+  telemetryLog.length = 0;
+  res.json({ cleared: true });
+});
 app.listen(PORT, () => {
   console.log(`Telemetry collector running on port ${PORT}`);
 });
