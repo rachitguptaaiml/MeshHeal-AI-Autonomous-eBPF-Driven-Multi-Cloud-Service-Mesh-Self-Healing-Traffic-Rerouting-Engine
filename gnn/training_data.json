@@ -1,35 +1,273 @@
 [
   {
     "degraded_service": "inventory",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 735,
+        "success": true,
+        "timestamp": 1791946872426
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 916,
+        "success": true,
+        "timestamp": 1791946872483
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1057,
+        "success": true,
+        "timestamp": 1791946872535
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1283,
+        "success": true,
+        "timestamp": 1791946872567
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 413,
+        "success": true,
+        "timestamp": 1791946876411
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 459,
+        "success": true,
+        "timestamp": 1791946876422
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 475,
+        "success": true,
+        "timestamp": 1791946876431
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 496,
+        "success": true,
+        "timestamp": 1791946876447
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 412,
+        "success": true,
+        "timestamp": 1791946884920
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 429,
+        "success": true,
+        "timestamp": 1791946884931
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 454,
+        "success": true,
+        "timestamp": 1791946884943
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 485,
+        "success": true,
+        "timestamp": 1791946884958
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 416,
+        "success": true,
+        "timestamp": 1791946890755
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 431,
+        "success": true,
+        "timestamp": 1791946890829
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 521,
+        "success": true,
+        "timestamp": 1791946890844
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 543,
+        "success": true,
+        "timestamp": 1791946890852
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
     "degradation_level": 4,
     "telemetry": [
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 1201,
+        "latencyMs": 807,
         "success": true,
-        "timestamp": 1791946457481
+        "timestamp": 1791946897352
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 1537,
+        "latencyMs": 1156,
         "success": true,
-        "timestamp": 1791946457592
+        "timestamp": 1791946897361
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 2058,
+        "latencyMs": 1169,
         "success": true,
-        "timestamp": 1791946457701
+        "timestamp": 1791946897371
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 2729,
+        "latencyMs": 1186,
         "success": true,
-        "timestamp": 1791946457799
+        "timestamp": 1791946897382
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 614,
+        "success": true,
+        "timestamp": 1791946903307
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 633,
+        "success": true,
+        "timestamp": 1791946903323
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 654,
+        "success": true,
+        "timestamp": 1791946903336
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 676,
+        "success": true,
+        "timestamp": 1791946903352
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 810,
+        "success": true,
+        "timestamp": 1791946909439
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 825,
+        "success": true,
+        "timestamp": 1791946909449
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 839,
+        "success": true,
+        "timestamp": 1791946909460
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 852,
+        "success": true,
+        "timestamp": 1791946909472
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 604,
+        "success": true,
+        "timestamp": 1791946913129
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 613,
+        "success": true,
+        "timestamp": 1791946913135
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 622,
+        "success": true,
+        "timestamp": 1791946913141
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 634,
+        "success": true,
+        "timestamp": 1791946913150
       }
     ]
   },
@@ -40,30 +278,302 @@
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 1020,
+        "latencyMs": 1008,
         "success": true,
-        "timestamp": 1791946466299
+        "timestamp": 1791946916714
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 1092,
+        "latencyMs": 1030,
         "success": true,
-        "timestamp": 1791946466434
+        "timestamp": 1791946916733
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 1241,
+        "latencyMs": 1057,
         "success": true,
-        "timestamp": 1791946466450
+        "timestamp": 1791946916762
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 1396,
+        "latencyMs": 1086,
         "success": true,
-        "timestamp": 1791946466488
+        "timestamp": 1791946916784
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 808,
+        "success": true,
+        "timestamp": 1791946926936
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 841,
+        "success": true,
+        "timestamp": 1791946926969
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 866,
+        "success": true,
+        "timestamp": 1791946927038
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 936,
+        "success": true,
+        "timestamp": 1791946927060
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 405,
+        "success": true,
+        "timestamp": 1791946931857
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 418,
+        "success": true,
+        "timestamp": 1791946931866
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 444,
+        "success": true,
+        "timestamp": 1791946931887
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 460,
+        "success": true,
+        "timestamp": 1791946931898
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 205,
+        "success": true,
+        "timestamp": 1791946934840
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 218,
+        "success": true,
+        "timestamp": 1791946934850
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 227,
+        "success": true,
+        "timestamp": 1791946934858
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 245,
+        "success": true,
+        "timestamp": 1791946934866
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 1003,
+        "success": true,
+        "timestamp": 1791946939036
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 1017,
+        "success": true,
+        "timestamp": 1791946939275
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1267,
+        "success": true,
+        "timestamp": 1791946939291
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1287,
+        "success": true,
+        "timestamp": 1791946939309
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 204,
+        "success": true,
+        "timestamp": 1791946943126
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 214,
+        "success": true,
+        "timestamp": 1791946943133
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 223,
+        "success": true,
+        "timestamp": 1791946943140
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 232,
+        "success": true,
+        "timestamp": 1791946943147
+      }
+    ]
+  },
+  {
+    "degraded_service": "inventory",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 204,
+        "success": true,
+        "timestamp": 1791946946808
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 216,
+        "success": true,
+        "timestamp": 1791946946816
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 224,
+        "success": true,
+        "timestamp": 1791946946821
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 231,
+        "success": true,
+        "timestamp": 1791946946826
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 375,
+        "success": true,
+        "timestamp": 1791946955584
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 1433,
+        "success": true,
+        "timestamp": 1791946956205
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1449,
+        "success": true,
+        "timestamp": 1791946956243
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1491,
+        "success": true,
+        "timestamp": 1791946956357
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791946959734
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 211,
+        "success": true,
+        "timestamp": 1791946959740
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 259,
+        "success": true,
+        "timestamp": 1791946959787
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 270,
+        "success": true,
+        "timestamp": 1791946959794
       }
     ]
   },
@@ -74,30 +584,30 @@
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 1156,
+        "latencyMs": 7,
         "success": true,
-        "timestamp": 1791946474019
+        "timestamp": 1791946965983
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 1583,
+        "latencyMs": 419,
         "success": true,
-        "timestamp": 1791946474040
+        "timestamp": 1791946965991
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 1601,
+        "latencyMs": 431,
         "success": true,
-        "timestamp": 1791946474051
+        "timestamp": 1791946966449
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 1631,
+        "latencyMs": 895,
         "success": true,
-        "timestamp": 1791946474070
+        "timestamp": 1791946966459
       }
     ]
   },
@@ -108,98 +618,914 @@
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 9,
+        "latencyMs": 7,
         "success": true,
-        "timestamp": 1791946495063
+        "timestamp": 1791946970022
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 846,
+        "latencyMs": 823,
         "success": true,
-        "timestamp": 1791946495074
+        "timestamp": 1791946970037
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 869,
+        "latencyMs": 834,
         "success": true,
-        "timestamp": 1791946495090
+        "timestamp": 1791946970042
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 908,
+        "latencyMs": 842,
         "success": true,
-        "timestamp": 1791946495101
+        "timestamp": 1791946970049
       }
     ]
   },
   {
-    "degraded_service": "orders",
+    "degraded_service": "payments",
     "degradation_level": 5,
     "telemetry": [
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 17,
+        "latencyMs": 5,
         "success": true,
-        "timestamp": 1791946500785
+        "timestamp": 1791946973920
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 839,
+        "latencyMs": 1014,
         "success": true,
-        "timestamp": 1791946500891
+        "timestamp": 1791946973926
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 1975,
+        "latencyMs": 1026,
         "success": true,
-        "timestamp": 1791946500957
+        "timestamp": 1791946973935
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 2042,
+        "latencyMs": 1049,
         "success": true,
-        "timestamp": 1791946501050
+        "timestamp": 1791946973945
       }
     ]
   },
   {
-    "degraded_service": "orders",
+    "degraded_service": "payments",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791946977693
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 214,
+        "success": true,
+        "timestamp": 1791946977698
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 221,
+        "success": true,
+        "timestamp": 1791946977704
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 230,
+        "success": true,
+        "timestamp": 1791946977710
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 8,
+        "success": true,
+        "timestamp": 1791946986864
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 625,
+        "success": true,
+        "timestamp": 1791946986873
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 643,
+        "success": true,
+        "timestamp": 1791946986889
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 660,
+        "success": true,
+        "timestamp": 1791946986898
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
     "degradation_level": 5,
     "telemetry": [
       {
         "source": "payments",
         "target": "inventory",
+        "latencyMs": 13,
+        "success": true,
+        "timestamp": 1791946991110
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 1024,
+        "success": true,
+        "timestamp": 1791946991118
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1036,
+        "success": true,
+        "timestamp": 1791946991127
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1054,
+        "success": true,
+        "timestamp": 1791946991146
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791946994842
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 214,
+        "success": true,
+        "timestamp": 1791946994849
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 223,
+        "success": true,
+        "timestamp": 1791946994855
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 238,
+        "success": true,
+        "timestamp": 1791946994867
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791946998847
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 1016,
+        "success": true,
+        "timestamp": 1791946998854
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1025,
+        "success": true,
+        "timestamp": 1791946998860
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1036,
+        "success": true,
+        "timestamp": 1791946998867
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 106,
+        "success": true,
+        "timestamp": 1791947003838
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 1121,
+        "success": true,
+        "timestamp": 1791947003847
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1133,
+        "success": true,
+        "timestamp": 1791947003859
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1161,
+        "success": true,
+        "timestamp": 1791947003891
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947010680
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 426,
+        "success": true,
+        "timestamp": 1791947010689
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 445,
+        "success": true,
+        "timestamp": 1791947010703
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 463,
+        "success": true,
+        "timestamp": 1791947010731
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947015687
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 220,
+        "success": true,
+        "timestamp": 1791947015699
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 242,
+        "success": true,
+        "timestamp": 1791947015721
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 263,
+        "success": true,
+        "timestamp": 1791947015737
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947020924
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 429,
+        "success": true,
+        "timestamp": 1791947020933
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 456,
+        "success": true,
+        "timestamp": 1791947020944
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 472,
+        "success": true,
+        "timestamp": 1791947020955
+      }
+    ]
+  },
+  {
+    "degraded_service": "payments",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947026632
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 617,
+        "success": true,
+        "timestamp": 1791947026639
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 629,
+        "success": true,
+        "timestamp": 1791947026646
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 640,
+        "success": true,
+        "timestamp": 1791947026653
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947032786
+      },
+      {
+        "source": "orders",
+        "target": "payments",
         "latencyMs": 122,
         "success": true,
-        "timestamp": 1791946510325
-      },
-      {
-        "source": "orders",
-        "target": "payments",
-        "latencyMs": 138,
-        "success": true,
-        "timestamp": 1791946510340
+        "timestamp": 1791947032798
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 1159,
+        "latencyMs": 541,
         "success": true,
-        "timestamp": 1791946510354
+        "timestamp": 1791947032990
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 1253,
+        "latencyMs": 1140,
         "success": true,
-        "timestamp": 1791946510377
+        "timestamp": 1791947032997
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 33,
+        "success": true,
+        "timestamp": 1791947040682
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 45,
+        "success": true,
+        "timestamp": 1791947040693
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 930,
+        "success": true,
+        "timestamp": 1791947040782
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 953,
+        "success": true,
+        "timestamp": 1791947040790
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947047975
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 17,
+        "success": true,
+        "timestamp": 1791947047986
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 434,
+        "success": true,
+        "timestamp": 1791947047994
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 453,
+        "success": true,
+        "timestamp": 1791947048003
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947052439
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 18,
+        "success": true,
+        "timestamp": 1791947052447
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1028,
+        "success": true,
+        "timestamp": 1791947052462
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1046,
+        "success": true,
+        "timestamp": 1791947052487
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947055799
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 13,
+        "success": true,
+        "timestamp": 1791947055805
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 221,
+        "success": true,
+        "timestamp": 1791947055811
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 244,
+        "success": true,
+        "timestamp": 1791947055820
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947059532
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 18,
+        "success": true,
+        "timestamp": 1791947059540
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 828,
+        "success": true,
+        "timestamp": 1791947059547
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 838,
+        "success": true,
+        "timestamp": 1791947059554
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947064070
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 19,
+        "success": true,
+        "timestamp": 1791947064078
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 829,
+        "success": true,
+        "timestamp": 1791947064086
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 847,
+        "success": true,
+        "timestamp": 1791947064099
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947069665
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 23,
+        "success": true,
+        "timestamp": 1791947069673
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 243,
+        "success": true,
+        "timestamp": 1791947069689
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 288,
+        "success": true,
+        "timestamp": 1791947069720
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 70,
+        "success": true,
+        "timestamp": 1791947076393
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 82,
+        "success": true,
+        "timestamp": 1791947076438
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 733,
+        "success": true,
+        "timestamp": 1791947076486
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 785,
+        "success": true,
+        "timestamp": 1791947076570
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 187,
+        "success": true,
+        "timestamp": 1791947081332
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 198,
+        "success": true,
+        "timestamp": 1791947082117
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1386,
+        "success": true,
+        "timestamp": 1791947082125
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1569,
+        "success": true,
+        "timestamp": 1791947082302
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 8,
+        "success": true,
+        "timestamp": 1791947100392
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 22,
+        "success": true,
+        "timestamp": 1791947100400
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 635,
+        "success": true,
+        "timestamp": 1791947100410
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 657,
+        "success": true,
+        "timestamp": 1791947100425
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 8,
+        "success": true,
+        "timestamp": 1791947107166
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 20,
+        "success": true,
+        "timestamp": 1791947107173
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 436,
+        "success": true,
+        "timestamp": 1791947107180
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 479,
+        "success": true,
+        "timestamp": 1791947107187
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947112361
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 17,
+        "success": true,
+        "timestamp": 1791947112370
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 830,
+        "success": true,
+        "timestamp": 1791947112378
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 842,
+        "success": true,
+        "timestamp": 1791947112385
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791947117925
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 18,
+        "success": true,
+        "timestamp": 1791947117933
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 429,
+        "success": true,
+        "timestamp": 1791947117940
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 442,
+        "success": true,
+        "timestamp": 1791947117952
+      }
+    ]
+  },
+  {
+    "degraded_service": "orders",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947121601
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 12,
+        "success": true,
+        "timestamp": 1791947121606
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 1021,
+        "success": true,
+        "timestamp": 1791947121612
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1037,
+        "success": true,
+        "timestamp": 1791947121624
       }
     ]
   },
@@ -210,30 +1536,64 @@
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 10,
+        "latencyMs": 4,
         "success": true,
-        "timestamp": 1791946516868
+        "timestamp": 1791947124299
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 25,
+        "latencyMs": 14,
         "success": true,
-        "timestamp": 1791946516887
+        "timestamp": 1791947124306
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 52,
+        "latencyMs": 29,
         "success": true,
-        "timestamp": 1791946517688
+        "timestamp": 1791947124318
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 1068,
+        "latencyMs": 237,
         "success": true,
-        "timestamp": 1791946517707
+        "timestamp": 1791947124323
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 15,
+        "success": true,
+        "timestamp": 1791947135849
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 63,
+        "success": true,
+        "timestamp": 1791947135898
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 109,
+        "success": true,
+        "timestamp": 1791947135919
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 946,
+        "success": true,
+        "timestamp": 1791947135931
       }
     ]
   },
@@ -244,64 +1604,472 @@
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 9,
+        "latencyMs": 6,
         "success": true,
-        "timestamp": 1791946523244
+        "timestamp": 1791947150279
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 28,
+        "latencyMs": 32,
         "success": true,
-        "timestamp": 1791946523252
+        "timestamp": 1791947150299
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 352,
+        "latencyMs": 42,
         "success": true,
-        "timestamp": 1791946523261
+        "timestamp": 1791947150306
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 780,
+        "latencyMs": 477,
         "success": true,
-        "timestamp": 1791946523286
+        "timestamp": 1791947150328
       }
     ]
   },
   {
-    "degraded_service": "gateway",
+    "degraded_service": "auth",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 25,
+        "success": true,
+        "timestamp": 1791947160999
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 53,
+        "success": true,
+        "timestamp": 1791947161009
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 82,
+        "success": true,
+        "timestamp": 1791947161039
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 910,
+        "success": true,
+        "timestamp": 1791947161076
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791947175933
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 16,
+        "success": true,
+        "timestamp": 1791947175938
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 26,
+        "success": true,
+        "timestamp": 1791947175944
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 838,
+        "success": true,
+        "timestamp": 1791947175951
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947201910
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 19,
+        "success": true,
+        "timestamp": 1791947201920
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 31,
+        "success": true,
+        "timestamp": 1791947201950
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 265,
+        "success": true,
+        "timestamp": 1791947201971
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947205672
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 14,
+        "success": true,
+        "timestamp": 1791947205678
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 24,
+        "success": true,
+        "timestamp": 1791947205684
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 440,
+        "success": true,
+        "timestamp": 1791947205697
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 29,
+        "success": true,
+        "timestamp": 1791947213242
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 55,
+        "success": true,
+        "timestamp": 1791947213259
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 74,
+        "success": true,
+        "timestamp": 1791947213275
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 495,
+        "success": true,
+        "timestamp": 1791947213291
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791947216821
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 12,
+        "success": true,
+        "timestamp": 1791947216829
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 26,
+        "success": true,
+        "timestamp": 1791947216839
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 835,
+        "success": true,
+        "timestamp": 1791947216844
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947222627
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 196,
+        "success": true,
+        "timestamp": 1791947222638
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 212,
+        "success": true,
+        "timestamp": 1791947222649
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 426,
+        "success": true,
+        "timestamp": 1791947222657
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947228846
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 20,
+        "success": true,
+        "timestamp": 1791947228895
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 72,
+        "success": true,
+        "timestamp": 1791947228903
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 283,
+        "success": true,
+        "timestamp": 1791947228918
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 8,
+        "success": true,
+        "timestamp": 1791947237421
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 30,
+        "success": true,
+        "timestamp": 1791947237451
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 58,
+        "success": true,
+        "timestamp": 1791947237457
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1034,
+        "success": true,
+        "timestamp": 1791947237468
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
     "degradation_level": 3,
     "telemetry": [
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 17,
+        "latencyMs": 5,
         "success": true,
-        "timestamp": 1791946528420
+        "timestamp": 1791947241402
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 40,
+        "latencyMs": 14,
         "success": true,
-        "timestamp": 1791946528442
+        "timestamp": 1791947241408
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 160,
+        "latencyMs": 22,
         "success": true,
-        "timestamp": 1791946528460
+        "timestamp": 1791947241418
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 195,
+        "latencyMs": 637,
         "success": true,
-        "timestamp": 1791946528474
+        "timestamp": 1791947241423
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947244571
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 12,
+        "success": true,
+        "timestamp": 1791947244577
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 21,
+        "success": true,
+        "timestamp": 1791947244583
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 629,
+        "success": true,
+        "timestamp": 1791947244588
+      }
+    ]
+  },
+  {
+    "degraded_service": "auth",
+    "degradation_level": 2,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791947247484
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 12,
+        "success": true,
+        "timestamp": 1791947247489
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 19,
+        "success": true,
+        "timestamp": 1791947247494
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 426,
+        "success": true,
+        "timestamp": 1791947247498
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 9,
+        "success": true,
+        "timestamp": 1791947254819
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 22,
+        "success": true,
+        "timestamp": 1791947254827
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 41,
+        "success": true,
+        "timestamp": 1791947254841
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 900,
+        "success": true,
+        "timestamp": 1791947255791
       }
     ]
   },
@@ -312,30 +2080,472 @@
       {
         "source": "payments",
         "target": "inventory",
-        "latencyMs": 8,
+        "latencyMs": 5,
         "success": true,
-        "timestamp": 1791946541739
+        "timestamp": 1791947258642
       },
       {
         "source": "orders",
         "target": "payments",
-        "latencyMs": 38,
+        "latencyMs": 12,
         "success": true,
-        "timestamp": 1791946541762
+        "timestamp": 1791947258648
       },
       {
         "source": "auth",
         "target": "orders",
-        "latencyMs": 56,
+        "latencyMs": 18,
         "success": true,
-        "timestamp": 1791946541772
+        "timestamp": 1791947258653
       },
       {
         "source": "gateway",
         "target": "auth",
-        "latencyMs": 68,
+        "latencyMs": 26,
         "success": true,
-        "timestamp": 1791946541780
+        "timestamp": 1791947258658
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947264152
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 18,
+        "success": true,
+        "timestamp": 1791947264160
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 37,
+        "success": true,
+        "timestamp": 1791947264184
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 75,
+        "success": true,
+        "timestamp": 1791947264207
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947267447
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 13,
+        "success": true,
+        "timestamp": 1791947267452
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 22,
+        "success": true,
+        "timestamp": 1791947267459
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 32,
+        "success": true,
+        "timestamp": 1791947267466
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947271113
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 13,
+        "success": true,
+        "timestamp": 1791947271119
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 22,
+        "success": true,
+        "timestamp": 1791947271125
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 31,
+        "success": true,
+        "timestamp": 1791947271130
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 11,
+        "success": true,
+        "timestamp": 1791947277229
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 22,
+        "success": true,
+        "timestamp": 1791947277235
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 34,
+        "success": true,
+        "timestamp": 1791947277243
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 49,
+        "success": true,
+        "timestamp": 1791947277252
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947280619
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 14,
+        "success": true,
+        "timestamp": 1791947280625
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 23,
+        "success": true,
+        "timestamp": 1791947280635
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 35,
+        "success": true,
+        "timestamp": 1791947280641
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 4,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947284558
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 425,
+        "success": true,
+        "timestamp": 1791947284586
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 433,
+        "success": true,
+        "timestamp": 1791947284592
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 441,
+        "success": true,
+        "timestamp": 1791947284597
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 1,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947294540
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 18,
+        "success": true,
+        "timestamp": 1791947294547
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 29,
+        "success": true,
+        "timestamp": 1791947294553
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 42,
+        "success": true,
+        "timestamp": 1791947294561
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947298408
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 13,
+        "success": true,
+        "timestamp": 1791947298414
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 21,
+        "success": true,
+        "timestamp": 1791947298420
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 28,
+        "success": true,
+        "timestamp": 1791947298425
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947301555
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 12,
+        "success": true,
+        "timestamp": 1791947301561
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 21,
+        "success": true,
+        "timestamp": 1791947301567
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 30,
+        "success": true,
+        "timestamp": 1791947301573
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 5,
+        "success": true,
+        "timestamp": 1791947304713
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 12,
+        "success": true,
+        "timestamp": 1791947304718
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 20,
+        "success": true,
+        "timestamp": 1791947304734
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 44,
+        "success": true,
+        "timestamp": 1791947304745
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 6,
+        "success": true,
+        "timestamp": 1791947307800
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 14,
+        "success": true,
+        "timestamp": 1791947307806
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 23,
+        "success": true,
+        "timestamp": 1791947307813
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 33,
+        "success": true,
+        "timestamp": 1791947307818
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 3,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 4,
+        "success": true,
+        "timestamp": 1791947311264
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 14,
+        "success": true,
+        "timestamp": 1791947311269
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 23,
+        "success": true,
+        "timestamp": 1791947311276
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 47,
+        "success": true,
+        "timestamp": 1791947311297
+      }
+    ]
+  },
+  {
+    "degraded_service": "gateway",
+    "degradation_level": 5,
+    "telemetry": [
+      {
+        "source": "payments",
+        "target": "inventory",
+        "latencyMs": 7,
+        "success": true,
+        "timestamp": 1791947316091
+      },
+      {
+        "source": "orders",
+        "target": "payments",
+        "latencyMs": 19,
+        "success": true,
+        "timestamp": 1791947316099
+      },
+      {
+        "source": "auth",
+        "target": "orders",
+        "latencyMs": 33,
+        "success": true,
+        "timestamp": 1791947317316
+      },
+      {
+        "source": "gateway",
+        "target": "auth",
+        "latencyMs": 1256,
+        "success": true,
+        "timestamp": 1791947317360
       }
     ]
   }
