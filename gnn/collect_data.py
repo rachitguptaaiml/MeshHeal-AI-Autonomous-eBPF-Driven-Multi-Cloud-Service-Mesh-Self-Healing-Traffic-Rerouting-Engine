@@ -23,4 +23,17 @@ def collect_one_sample(degraded_service, level):
         'degradation_level': level,
         'telemetry': telemetry,
     }
-    return sample
+    return sample       
+def collect_dataset(num_samples_per_service):
+    dataset = []
+    for service in SERVICES:
+        for i in range(num_samples_per_service):
+            level = random.randint(1, 5)
+            print(f"Collecting sample: {service} at level {level} ({i+1}/{num_samples_per_service})")
+            sample = collect_one_sample(service, level)
+            dataset.append(sample)
+    return dataset
+def save_dataset(dataset, filename):
+    with open(filename, 'w') as f:
+        json.dump(dataset, f, indent=2)
+    print(f"Saved {len(dataset)} samples to {filename}")
