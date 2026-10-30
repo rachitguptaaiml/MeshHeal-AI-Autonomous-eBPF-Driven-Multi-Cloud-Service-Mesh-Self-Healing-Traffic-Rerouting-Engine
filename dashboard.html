@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MeshHeal-AI Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --purple: #a855f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
+  header { padding: 20px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; }
+  header h1 span { color: var(--blue); }
+  .status-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .live-badge { font-size: 0.8rem; color: var(--green); display: flex; align-items: center; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px 32px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .card h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 16px; }
+  .full-width { grid-column: 1 / -1; }
+  .service-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .service-node { background: var(--bg); border: 2px solid var(--border); border-radius: 10px; padding: 14px 10px; text-align: center; transition: border-color 0.3s, box-shadow 0.3s; }
+  .service-node.healthy { border-color: var(--green); }
+  .service-node.warning { border-color: var(--yellow); box-shadow: 0 0 12px rgba(234,179,8,0.2); }
+  .service-node.critical { border-color: var(--red); box-shadow: 0 0 16px rgba(239,68,68,0.3); animation: flash 1s infinite; }
+  @keyframes flash { 0%,100%{opacity:1} 50%{opacity:0.7} }
+  .service-node .name { font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; text-transform: capitalize; }
+  .service-node .latency { font-size: 1.1rem; font-weight: 700; }
+  .service-node .label { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+  .service-node .risk { font-size: 0.75rem; margin-top: 6px; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+  .risk.low { background: rgba(34,197,94,0.15); color: var(--green); }
+  .risk.medium { background: rgba(234,179,8,0.15); color: var(--yellow); }
+  .risk.high { background: rgba(239,68,68,0.15); color: var(--red); }
+  .chart-wrap { position: relative; height: 220px; }
+  .log-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .log-table th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--border); }
+  .log-table td { padding: 8px 12px; border-bottom: 1px solid rgba(42,45,58,0.5); }
+  .log-table tr:last-child td { border-bottom: none; }
+  .badge { padding: 2px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+  .badge.dry-run { background: rgba(59,130,246,0.15); color: var(--blue); }
+  .badge.executed { background: rgba(34,197,94,0.15); color: var(--green); }
+  .badge.failed { background: rgba(239,68,68,0.15); color: var(--red); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; padding: 0 32px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; }
+  .stat .val { font-size: 1.8rem; font-weight: 700; color: var(--blue); }
+  .stat .lbl { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .arrow { color: var(--muted); font-size: 1.2rem; }
+  .mesh-flow { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 0; flex-wrap: wrap; }
+  .mesh-node { padding: 8px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; border: 1px solid; }
+  .no-data { color: var(--muted); font-size: 0.85rem; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mesh<span>Heal</span>-AI &nbsp;·&nbsp; Self-Healing Service Mesh</h1>
+  <div class="live-badge"><span class="status-dot"></span> LIVE · refreshes every 5s</div>
+</header>
+
+<div class="stats-row">
+  <div class="stat"><div class="val" id="stat-services">0</div><div class="lbl">Services Online</div></div>
+  <div class="stat"><div class="val" id="stat-remediations">0</div><div class="lbl">Remediations Executed</div></div>
+  <div class="stat"><div class="val" id="stat-avg-latency">—</div><div class="lbl">Avg Latency (ms)</div></div>
+  <div class="stat"><div class="val" id="stat-degraded">—</div><div class="lbl">Last Detected Fault</div></div>
+</div>
+
+<div class="grid">
+  <!-- Service Mesh Graph -->
+  <div class="card full-width">
+    <h2>Service Mesh · Live Health</h2>
+    <div class="mesh-flow" id="mesh-flow">
+      <div class="no-data">Waiting for telemetry...</div>
+    </div>
+    <div style="margin-top:16px">
+      <div class="service-grid" id="service-grid">
+      </div>
+    </div>
+  </div>
+
+  <!-- Latency Chart -->
+  <div class="card">
+    <h2>Latency History (ms)</h2>
+    <div class="chart-wrap">
+      <canvas id="latencyChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Risk Score Chart -->
+  <div class="card">
+    <h2>Risk Score by Service</h2>
+    <div class="chart-wrap">
+      <canvas id="riskChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Audit Log -->
+  <div class="card full-width">
+    <h2>Remediation Audit Log</h2>
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Phase</th>
+          <th>Service</th>
+          <th>Action</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody id="audit-tbody">
+        <tr><td colspan="5" class="no-data">No audit entries yet...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const TELEMETRY_URL = 'http://localhost:5000/telemetry';
+const AUDIT_URL = 'http://localhost:5001/audit';
+const SERVICES = ['gateway','auth','orders','payments','inventory'];
+const SERVICE_COLORS = {
+  gateway: '#3b82f6', auth: '#a855f7', orders: '#f59e0b',
+  payments: '#ef4444', inventory: '#22c55e'
+};
+const CHAIN = ['gateway','auth','orders','payments','inventory'];
+
+let latencyHistory = {};
+SERVICES.forEach(s => latencyHistory[s] = []);
+let labels = [];
+let latencyChart, riskChart;
+let auditEntries = [];
+
+// Init charts
+function initCharts() {
+  const lCtx = document.getElementById('latencyChart').getContext('2d');
+  latencyChart = new Chart(lCtx, {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: SERVICES.map(s => ({
+        label: s,
+        data: [],
+        borderColor: SERVICE_COLORS[s],
+        backgroundColor: SERVICE_COLORS[s] + '22',
+        borderWidth: 2,
+        pointRadius: 2,
+        tension: 0.4,
+        fill: false
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
+      scales: {
+        x: { ticks: { color: '#94a3b8', maxTicksLimit: 6 }, grid: { color: '#2a2d3a' } },
+        y: { ticks: { color: '#94a3b8' }, grid: { color: '#2a2d3a' } }
+      }
+    }
+  });
+
+  const rCtx = document.getElementById('riskChart').getContext('2d');
+  riskChart = new Chart(rCtx, {
+    type: 'bar',
+    data: {
+      labels: SERVICES,
+      datasets: [{
+        label: 'Risk Score',
+        data: [0,0,0,0,0],
+        backgroundColor: SERVICES.map(s => SERVICE_COLORS[s] + 'aa'),
+        borderColor: SERVICES.map(s => SERVICE_COLORS[s]),
+        borderWidth: 2,
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#94a3b8' }, grid: { color: '#2a2d3a' } },
+        y: { min: 0, max: 1, ticks: { color: '#94a3b8' }, grid: { color: '#2a2d3a' } }
+      }
+    }
+  });
+}
+
+function getRiskLevel(score) {
+  if (score > 0.6) return 'high';
+  if (score > 0.3) return 'medium';
+  return 'low';
+}
+
+function getNodeClass(latency) {
+  if (latency > 800) return 'critical';
+  if (latency > 300) return 'warning';
+  return 'healthy';
+}
+
+function updateServiceGrid(latencyMap, riskMap) {
+  const grid = document.getElementById('service-grid');
+  grid.innerHTML = SERVICES.map(s => {
+    const lat = latencyMap[s] || 0;
+    const risk = riskMap[s] || 0;
+    const cls = getNodeClass(lat);
+    const riskLvl = getRiskLevel(risk);
+    return `<div class="service-node ${cls}">
+      <div class="name">${s}</div>
+      <div class="latency">${lat ? lat.toFixed(0) : '—'}<span style="font-size:0.65rem;color:var(--muted)"> ms</span></div>
+      <div class="label">inbound latency</div>
+      <div class="risk ${riskLvl}">risk: ${(risk*100).toFixed(0)}%</div>
+    </div>`;
+  }).join('');
+
+  // mesh flow
+  const flow = document.getElementById('mesh-flow');
+  flow.innerHTML = CHAIN.map((s, i) => {
+    const lat = latencyMap[s] || 0;
+    const cls = getNodeClass(lat);
+    const colors = { healthy: '#22c55e', warning: '#eab308', critical: '#ef4444' };
+    const c = colors[cls];
+    return `<div class="mesh-node" style="border-color:${c};color:${c}">${s}</div>` +
+      (i < CHAIN.length - 1 ? `<span class="arrow">→</span>` : '');
+  }).join('');
+}
+
+function updateLatencyChart(latencyMap) {
+  const now = new Date().toLocaleTimeString();
+  if (labels.length > 20) { labels.shift(); SERVICES.forEach(s => latencyHistory[s].shift()); }
+  labels.push(now);
+  SERVICES.forEach(s => latencyHistory[s].push(latencyMap[s] || 0));
+  latencyChart.data.labels = [...labels];
+  latencyChart.data.datasets.forEach((ds, i) => { ds.data = [...latencyHistory[SERVICES[i]]]; });
+  latencyChart.update('none');
+}
+
+function computeRisk(latencyMap) {
+  const maxLat = Math.max(...Object.values(latencyMap), 1);
+  const risk = {};
+  SERVICES.forEach(s => { risk[s] = Math.min((latencyMap[s] || 0) / maxLat, 1); });
+  return risk;
+}
+
+function updateRiskChart(riskMap) {
+  riskChart.data.datasets[0].data = SERVICES.map(s => riskMap[s] || 0);
+  riskChart.data.datasets[0].backgroundColor = SERVICES.map(s => {
+    const r = riskMap[s] || 0;
+    if (r > 0.6) return '#ef444488';
+    if (r > 0.3) return '#eab30888';
+    return '#22c55e88';
+  });
+  riskChart.update('none');
+}
+
+function updateStats(latencyMap, riskMap) {
+  document.getElementById('stat-services').textContent = SERVICES.length;
+  document.getElementById('stat-remediations').textContent =
+    auditEntries.filter(e => e.phase === 'EXECUTED').length;
+  const lats = Object.values(latencyMap).filter(v => v > 0);
+  document.getElementById('stat-avg-latency').textContent =
+    lats.length ? (lats.reduce((a,b) => a+b, 0) / lats.length).toFixed(0) : '—';
+  const highRisk = SERVICES.filter(s => (riskMap[s] || 0) > 0.6);
+  document.getElementById('stat-degraded').textContent =
+    highRisk.length ? highRisk[0] : 'none';
+}
+
+function updateAuditLog() {
+  const tbody = document.getElementById('audit-tbody');
+  if (!auditEntries.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="no-data">No audit entries yet...</td></tr>';
+    return;
+  }
+  const recent = [...auditEntries].reverse().slice(0, 10);
+  tbody.innerHTML = recent.map(e => {
+    const phase = e.phase === 'DRY_RUN' ? 'dry-run' : e.status === 'success' ? 'executed' : 'failed';
+    const result = e.phase === 'DRY_RUN' ? '—' :
+      (e.degradation_reset ? '✓ reset' : '✗') + ' · ' + (e.container_restarted ? '✓ restart' : '✗');
+    return `<tr>
+      <td style="color:var(--muted)">${e.timestamp.replace('T',' ').split('.')[0]}</td>
+      <td><span class="badge ${phase}">${e.phase}</span></td>
+      <td style="font-weight:600;color:${SERVICE_COLORS[e.service] || 'white'}">${e.service}</td>
+      <td>${e.action}</td>
+      <td>${result}</td>
+    </tr>`;
+  }).join('');
+}
+
+async function fetchTelemetry() {
+  try {
+    const r = await fetch(TELEMETRY_URL);
+    const data = await r.json();
+    const latencyMap = {};
+    const seen = {};
+    [...data].reverse().forEach(entry => {
+      const key = entry.target;
+      if (!seen[key]) { seen[key] = true; latencyMap[key] = entry.latencyMs; }
+    });
+    return latencyMap;
+  } catch { return {}; }
+}
+
+async function fetchAudit() {
+  try {
+    const r = await fetch(AUDIT_URL);
+    auditEntries = await r.json();
+  } catch { /* audit server not running */ }
+}
+
+async function refresh() {
+  const latencyMap = await fetchTelemetry();
+  await fetchAudit();
+  const riskMap = computeRisk(latencyMap);
+  updateServiceGrid(latencyMap, riskMap);
+  updateLatencyChart(latencyMap);
+  updateRiskChart(riskMap);
+  updateStats(latencyMap, riskMap);
+  updateAuditLog();
+}
+
+initCharts();
+refresh();
+setInterval(refresh, 5000);
+</script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 services:
   inventory:
     build: ./services/inventory
+    ports:
+      - "4004:4000"
     environment:
       - PORT=4000
       - TELEMETRY_URL=http://telemetry-collector:5000/report
@@ -8,6 +10,8 @@ services:
     build:
       context: ./services
       dockerfile: payments/Dockerfile
+    ports:
+      - "4003:4000"
     environment:
       - PORT=4000
       - INVENTORY_URL=http://inventory:4000
@@ -16,6 +20,8 @@ services:
     build:
       context: ./services
       dockerfile: orders/Dockerfile
+    ports:
+      - "4002:4000"
     environment:
       - PORT=4000
       - PAYMENTS_URL=http://payments:4000
@@ -24,6 +30,8 @@ services:
     build:
       context: ./services
       dockerfile: auth/Dockerfile
+    ports:
+      - "4001:4000"
     environment:
       - PORT=4000
       - ORDERS_URL=http://orders:4000
@@ -44,3 +52,12 @@ services:
       - "5000:5000"
     environment:
       - PORT=5000
+  envoy:
+    image: envoyproxy/envoy:v1.28-latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./envoy/envoy.yaml:/etc/envoy/envoy.yaml
+    depends_on:
+      - gateway
+    command: ["/usr/local/bin/envoy", "-c", "/etc/envoy/envoy.yaml"]

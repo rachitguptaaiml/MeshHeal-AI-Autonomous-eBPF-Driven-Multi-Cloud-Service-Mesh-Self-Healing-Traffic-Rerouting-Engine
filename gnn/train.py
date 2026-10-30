@@ -13,7 +13,7 @@ train_graphs = graphs[:split_point]
 test_graphs = graphs[split_point:]
 
 print(f"Training on {len(train_graphs)} graphs, testing on {len(test_graphs)}")
-model = MeshHealGNN(num_node_features=1, num_classes=5)
+model = MeshHealGNN(num_node_features=4, num_classes=5)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 loss_function = torch.nn.CrossEntropyLoss()
 train_loader = DataLoader(train_graphs, batch_size=8, shuffle=True)
@@ -42,3 +42,5 @@ for graph in test_graphs:
 
 accuracy = correct / len(test_graphs)
 print(f"Test accuracy: {accuracy:.2%} ({correct}/{len(test_graphs)})")
+torch.save(model.state_dict(), "meshheal_gnn.pth")
+print("Model saved to meshheal_gnn.pth")

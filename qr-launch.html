@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MeshHeal-AI · Scan to Pay</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root { --bg:#0f1117; --card:#1a1d27; --border:#2a2d3a; --text:#e2e8f0; --muted:#94a3b8; --blue:#3b82f6; --green:#22c55e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; }
+  .logo { font-size:1.6rem; font-weight:800; margin-bottom:8px; }
+  .logo span { color:var(--blue); }
+  .sub { color:var(--muted); font-size:0.85rem; margin-bottom:32px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:32px; text-align:center; max-width:360px; width:100%; }
+  #qrcode { display:flex; justify-content:center; margin-bottom:20px; }
+  #qrcode canvas, #qrcode img { border-radius:12px; border:4px solid white; }
+  .url { font-size:0.72rem; color:var(--muted); word-break:break-all; margin-bottom:16px; padding:8px 12px; background:var(--bg); border-radius:8px; }
+  .instruction { font-size:0.9rem; color:var(--muted); margin-bottom:8px; }
+  .instruction b { color:var(--text); }
+  .steps { text-align:left; margin-top:20px; border-top:1px solid var(--border); padding-top:16px; }
+  .step { display:flex; gap:10px; align-items:flex-start; padding:6px 0; font-size:0.82rem; color:var(--muted); }
+  .step-num { background:var(--blue); color:white; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; flex-shrink:0; margin-top:1px; }
+</style>
+</head>
+<body>
+<div class="logo">Mesh<span>Heal</span>-AI</div>
+<div class="sub">Self-Healing Service Mesh · Live Demo</div>
+
+<div class="card">
+  <div id="qrcode"></div>
+  <div class="url" id="urlDisplay"></div>
+  <div class="instruction">Scan with your phone to open the<br><b>live payment demo</b></div>
+
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div>Scan QR with phone camera</div>
+    <div class="step"><div class="step-num">2</div>Toggle "Simulate fault" to degrade payments</div>
+    <div class="step"><div class="step-num">3</div>Click Pay — watch GNN detect & self-heal</div>
+    <div class="step"><div class="step-num">4</div>Check dashboard for live risk scores & audit log</div>
+  </div>
+</div>
+
+<script>
+const NGROK_URL = 'https://bless-plunging-thumping.ngrok-free.app/pay';
+document.getElementById('urlDisplay').textContent = NGROK_URL;
+new QRCode(document.getElementById('qrcode'), {
+  text: NGROK_URL,
+  width: 220,
+  height: 220,
+  colorDark: "#000000",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.H
+});
+</script>
+</body>
+</html>
